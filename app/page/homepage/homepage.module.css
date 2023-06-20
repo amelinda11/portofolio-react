@@ -1,0 +1,17 @@
+.wrapper-content {
+  margin: 31px 34px;
+  color: #FFFFFF;
+  border: 2px solid #FFEAD2;
+  border-radius: 10px;
+  padding: 23px 18px;
+}
+.stroke-font {
+  color: black;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+}
+/* .wrapper-header{
+  max-height: 100vw;
+  overflow-y: scroll;
+} */
