@@ -1,0 +1,32 @@
+.wrapper-list-experience {
+  margin: 5rem;
+}
+
+.wrapper-plane {
+  display: block;
+}
+
+.wrapper-list-experience > :nth-of-type(1) .wrapper-plane  {
+  margin-right: 11rem;
+  margin-top: 6rem;
+}
+
+.wrapper-list-experience > :nth-of-type(2) .wrapper-plane {
+  transform: rotate(110deg);
+  transform: scaleX(-1);
+  margin-left: 9rem;
+  margin-top: 8rem;
+  -webkit-transform: scaleX(-1);
+}
+
+.wrapper-list-experience > :nth-of-type(2){
+  flex-direction: row-reverse;
+}
+
+.wrapper-list-experience > :nth-of-type(3) .wrapper-plane > img {
+  display: none;
+}
+
+.wrapper-list-experience > :nth-of-type(3) > div{
+  margin-right: 20rem;
+}

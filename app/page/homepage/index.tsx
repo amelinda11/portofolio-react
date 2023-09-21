@@ -6,6 +6,7 @@ import styled, { keyframes } from 'styled-components';
 import HomepageContent from './HomepageContent';
 import { motion } from "framer-motion";
 import AboutMe from '../aboutme/AboutMe';
+import Experience from '../experience/Experience';
 
 
 const Homepage = () => {
@@ -42,7 +43,7 @@ const Homepage = () => {
               height={50}
               />
           </Link>
-          <FloatingElement className='relative bottom-[113px] left-[30px]'>
+          <FloatingElement className='relative bottom-[113px] left-[76px]'>
             <Image
               src='/astronaut-hero.png'
               alt="astronaut"
@@ -51,9 +52,10 @@ const Homepage = () => {
             />
           </FloatingElement>
         </div>
-        <div>
+        <div className='flex flex-col gap-40'>
           <HomepageContent/>
           <AboutMe/>
+          <Experience/>
         </div>
       </div>
 
@@ -65,17 +67,17 @@ const Homepage = () => {
 export default Homepage;
 
 const FloatingAnimation = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); } 
 `;
 
-const FloatingElement = styled.div`
-  animation: ${FloatingAnimation} 4s ease-in-out infinite;
+export const FloatingElement = styled.div`
+   animation-name: ${FloatingAnimation};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+
 `;
