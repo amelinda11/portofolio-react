@@ -1,4 +1,6 @@
 "use client";
+import "@fortawesome/fontawesome-svg-core/styles.css"; 
+import { config } from "@fortawesome/fontawesome-svg-core";
 import { useState } from 'react';
 import { useInterval } from 'usehooks-ts';
 import Homepage from './page/homepage';

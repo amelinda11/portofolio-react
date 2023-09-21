@@ -1,12 +1,16 @@
-import { experiences_list } from '@/app/constant/experience';
-import { ListExperienceType } from '@/app/type';
+// External Dependencies
 import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowRight } from '@fortawesome/free-solid-svg-icons';
+
+// Internal Dependencies
+import { experiences_list } from '@/app/constant/experience';
+import { ListExperienceType } from '@/app/type';
+
+// Styles
 import styles from './experiences.module.css';
-
-
-
 
 const ListExperience = () => {
   return (
@@ -40,6 +44,13 @@ const ListExperience = () => {
           </div>
         </div>
       ))}
+
+      <p className={styles['view-full']}>View Full Resume &nbsp;
+        <FontAwesomeIcon
+          icon={faLongArrowRight}
+          style={{ fontSize: 19}}
+        />
+      </p>
     </div>
   );
 };

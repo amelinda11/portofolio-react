@@ -7,6 +7,8 @@ import HomepageContent from './HomepageContent';
 import { motion } from "framer-motion";
 import AboutMe from '../aboutme/AboutMe';
 import Experience from '../experience/Experience';
+import ListTools from '../tools/ListTools';
+import Tools from '../tools/Tools';
 
 
 const Homepage = () => {
@@ -56,6 +58,7 @@ const Homepage = () => {
           <HomepageContent/>
           <AboutMe/>
           <Experience/>
+          <Tools/>
         </div>
       </div>
 
