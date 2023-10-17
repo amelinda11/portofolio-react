@@ -1,5 +1,5 @@
 .wrapper-list-experience {
-  margin: 5rem;
+  margin-top: 8rem;
 }
 
 .wrapper-plane {
@@ -7,8 +7,8 @@
 }
 
 .wrapper-list-experience > :nth-of-type(1) .wrapper-plane  {
-  margin-right: 11rem;
-  margin-top: 6rem;
+  margin-right: 19rem;
+  margin-top: 3rem;
 }
 
 .wrapper-list-experience > :nth-of-type(2) .wrapper-plane {
@@ -34,7 +34,7 @@
 .view-full {
   display: flex;
   align-items: center;
-  margin-top: 7rem;
+  margin-top: 4rem;
   color: #DBDFEA;
   font-weight: 500;
   cursor: pointer;

@@ -1,0 +1,32 @@
+.tabListCustome {
+  justify-content: center !important;
+}
+
+.tabListCustome > button {
+  width: 100% !important;
+  padding: 1.2rem;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.seperate-line {
+  border-top-width: 3px;
+  color: #fff;
+}
+
+.wrapper-tools {
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+.wrapper-background {
+  background-color: #ACB1D6;
+  border-radius: 90%;
+  width: 100px;
+  height: 100px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}

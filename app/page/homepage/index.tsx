@@ -36,29 +36,31 @@ const Homepage = () => {
         animate="show"
       >
       <div className={styles['wrapper-content']}>
-        <div className='flex justify-between max-h-28'>
-          <Link href="/home">
-            <Image 
-              src='/icon-a.png' 
-              alt='icon-master'
-              width={50}
-              height={50}
+        <div className={styles['background-wrapper']}>
+          <div className='flex justify-between max-h-28'>
+            <Link href="/home">
+              <Image 
+                src='/icon-a.png' 
+                alt='icon-master'
+                width={50}
+                height={50}
+                />
+            </Link>
+            <FloatingElement className='relative bottom-[113px] left-[76px]'>
+              <Image
+                src='/astronaut-hero.png'
+                alt="astronaut"
+                width={250}
+                height={250}
               />
-          </Link>
-          <FloatingElement className='relative bottom-[113px] left-[76px]'>
-            <Image
-              src='/astronaut-hero.png'
-              alt="astronaut"
-              width={250}
-              height={250}
-            />
-          </FloatingElement>
-        </div>
-        <div className='flex flex-col gap-40'>
-          <HomepageContent/>
-          <AboutMe/>
-          <Experience/>
-          <Tools/>
+            </FloatingElement>
+          </div>
+          <div className='flex flex-col gap-40'>
+            <HomepageContent/>
+            <AboutMe/>
+            <Experience/>
+            <Tools/>
+          </div>
         </div>
       </div>
 

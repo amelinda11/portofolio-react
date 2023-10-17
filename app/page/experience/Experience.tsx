@@ -18,7 +18,7 @@ const Experience = () => {
             className='rotate-[348deg]'
           />
         </FloatingElementX>
-        <div className='text-5xl font-extrabold mb-2'>
+        <div className='text-5xl font-extrabold mb-0'>
           <b>EXPERI</b><b className={styles['stroke-font']}>ENCES</b>
         </div>
       </div>

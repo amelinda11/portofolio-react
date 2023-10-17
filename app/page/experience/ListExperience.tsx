@@ -16,7 +16,7 @@ const ListExperience = () => {
   return (
     <div className={styles['wrapper-list-experience']}>
       {experiences_list.map((res: ListExperienceType, i: number) => (
-        <div key={i} className='flex items-center justify-around'>
+        <div key={i} className='flex items-center justify-around mx-32'>
           <div className='w-[fit-content] flex flex-col items-center'>
             <StyledWrapperCircle>
               <Image
