@@ -1,9 +1,13 @@
 .wrapper-content {
-  margin: 31px 34px;
+  padding: 31px 34px;
   color: #FFFFFF;
+  background-color: #0B2447;
+}
+
+.background-wrapper {
   border: 2px solid #FFEAD2;
   border-radius: 10px;
-  padding: 23px 18px;
+  padding: 23px 50px;
 }
 .stroke-font {
   color: black;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from './homepage.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +6,11 @@ import styled, { keyframes } from 'styled-components';
 import HomepageContent from './HomepageContent';
 import { motion } from "framer-motion";
 import AboutMe from '../aboutme/AboutMe';
+import Experience from '../experience/Experience';
+import ListTools from '../tools/ListTools';
+import Tools from '../tools/Tools';
+import Particles from 'react-tsparticles';
+import { loadSlim } from "tsparticles-slim";
 
 
 const Homepage = () => {
@@ -20,44 +25,56 @@ const Homepage = () => {
     }
   }
 
+  const particlesInit = useCallback(async (engine: any) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    //await loadFull(engine);
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = useCallback(async (container: any) => {
+    await console.log(container);
+}, []);
+
   return (
     <div className={styles['wrapper-header']}>
-      {/* <div>
+      <div>
       <div id='stars'></div>
       <div id='stars2'></div>
       <div id='stars3'></div>
-      </div> */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
+      </div>
+    
       <div className={styles['wrapper-content']}>
-        <div className='flex justify-between max-h-28'>
-          <Link href="/home">
-            <Image 
-              src='/icon-a.png' 
-              alt='icon-master'
-              width={50}
-              height={50}
+        <div className={styles['background-wrapper']}>
+          <div className='flex justify-between max-h-28'>
+            <Link href="/home">
+              <Image 
+                src='/icon-a.png' 
+                alt='icon-master'
+                width={50}
+                height={50}
+                />
+            </Link>
+            <FloatingElement className='relative bottom-[113px] left-[76px]'>
+              <Image
+                src='/astronaut-hero.png'
+                alt="astronaut"
+                width={250}
+                height={250}
               />
-          </Link>
-          <FloatingElement className='relative bottom-[113px] left-[30px]'>
-            <Image
-              src='/astronaut-hero.png'
-              alt="astronaut"
-              width={250}
-              height={250}
-            />
-          </FloatingElement>
-        </div>
-        <div>
-          <HomepageContent/>
-          <AboutMe/>
+            </FloatingElement>
+          </div>
+          <div className='flex flex-col gap-40'>
+            <HomepageContent/>
+            <AboutMe/>
+            <Experience/>
+            <Tools/>
+          </div>
         </div>
       </div>
 
-    </motion.div>
     </div>
   );
 };
@@ -65,17 +82,17 @@ const Homepage = () => {
 export default Homepage;
 
 const FloatingAnimation = keyframes`
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-18px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); } 
 `;
 
-const FloatingElement = styled.div`
-  animation: ${FloatingAnimation} 4s ease-in-out infinite;
+export const FloatingElement = styled.div`
+   animation-name: ${FloatingAnimation};
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+
 `;
