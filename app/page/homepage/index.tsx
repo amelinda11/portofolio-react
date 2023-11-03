@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styles from './homepage.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,6 +9,8 @@ import AboutMe from '../aboutme/AboutMe';
 import Experience from '../experience/Experience';
 import ListTools from '../tools/ListTools';
 import Tools from '../tools/Tools';
+import Particles from 'react-tsparticles';
+import { loadSlim } from "tsparticles-slim";
 
 
 const Homepage = () => {
@@ -23,18 +25,27 @@ const Homepage = () => {
     }
   }
 
+  const particlesInit = useCallback(async (engine: any) => {
+    console.log(engine);
+    // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
+    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+    // starting from v2 you can add only the features you need reducing the bundle size
+    //await loadFull(engine);
+    await loadSlim(engine);
+}, []);
+
+const particlesLoaded = useCallback(async (container: any) => {
+    await console.log(container);
+}, []);
+
   return (
     <div className={styles['wrapper-header']}>
-      {/* <div>
+      <div>
       <div id='stars'></div>
       <div id='stars2'></div>
       <div id='stars3'></div>
-      </div> */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-      >
+      </div>
+    
       <div className={styles['wrapper-content']}>
         <div className={styles['background-wrapper']}>
           <div className='flex justify-between max-h-28'>
@@ -64,7 +75,6 @@ const Homepage = () => {
         </div>
       </div>
 
-    </motion.div>
     </div>
   );
 };

@@ -3,11 +3,18 @@ import React from 'react';
 import styled from 'styled-components';
 import styles from '../homepage/homepage.module.css'
 import { FloatingElement } from '../homepage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSmile } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 const AboutMe = () => {
   return (
     <div className='w-full flex'>
-      <div className='w-1/2 flex justify-center items-center'>
+      <div 
+        data-aos="fade-right" 
+        data-aos-duration="600" 
+        className='w-1/2 flex justify-center items-center'
+      >
         <StyledWrapperCircle>
           <Image
             src='/astronaut-hero.png'
@@ -17,7 +24,12 @@ const AboutMe = () => {
           />
         </StyledWrapperCircle>
       </div>
-      <div className='w-1/2 flex items-center flex-col gap-4'>
+      <div 
+        data-aos="fade-left" 
+        data-aos-duration="600" 
+        data-aos-delay="550"
+        className='w-1/2 flex items-center flex-col gap-4'
+      >
         <div className='w-full flex flex-col items-center gap-2'>
           <FloatingElement>
             <Image
@@ -31,11 +43,23 @@ const AboutMe = () => {
             <b>ABOUT</b><b className={styles['stroke-font']}> ME</b>
           </div>
         </div>
-        <p className='text-justify'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque lacinia quam eu porttitor. 
-          Mauris nec purus elit. Fusce lobortis dapibus orci, sed convallis sem dignissim eu. Vestibulum et bibendum mauris. 
-          Nullam rutrum dignissim erat, nec ultricies risus mattis ac. Cras eu ipsum eget diam pharetra sollicitudin. 
-          Duis hendrerit dui nec lectus tincidunt semper. Donec vitae felis sit amet leo aliquet scelerisque.
+        <p className='font-normal'>
+          Hello there! My name is Anisa Melinda Rahmayunita, but you can call me Nisa.<br/>
+          I graduated in 2019 from&nbsp; 
+          <Link href="https://telkomuniversity.ac.id/en/">Telkom University</Link> 
+          with a major in&nbsp; 
+          <Link href="https://telkomuniversity.ac.id/en/">Information Systems</Link>.  
+          I am a dedicated and passionate front-end developer with <b>over three years</b> of specialized experience in web development, 
+          I have experience developing and designing software for the web, from simple landing pages to progressive web applications. 
+          <br/><br/>
+          Currently, I work as an&nbsp; 
+          <Link href="https://kfcku.com/">Engineer at PT Fast Food Indonesia</Link>, 
+          commonly known as KFC, where I am responsible for building components for the internal website. I thoroughly enjoy my role as a front-end developer in this company as it grants me the privilege to enhance UI and UX designs, cause in my opinion
+          design is a primary aspect of a front-end developer&apos;s responsibilities.
+          <br/><br/>
+          When I&apos;m not in front of a computer screen, you&apos;ll likely find me at the park, enjoying nature, or simply relaxing in a comfortable spot to learn new things, such as delving deeper into improving my English language skills and tech skills, for now I learn about development with mobile apps (react native, flutter).<br/>
+          Travelling around the town is a must&nbsp;
+          <FontAwesomeIcon icon={faSmile}/>
         </p>
       </div>
     </div>
